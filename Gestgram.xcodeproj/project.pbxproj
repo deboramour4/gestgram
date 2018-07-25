@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE8DC086210798F200FD9A69 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DC085210798F200FD9A69 /* ProfileCell.swift */; };
+		BE9C74F32108B97F009BDFBC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C74F22108B97F009BDFBC /* DetailViewController.swift */; };
 		BEF06A05210740CA00106622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF06A04210740CA00106622 /* AppDelegate.swift */; };
 		BEF06A07210740CA00106622 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF06A06210740CA00106622 /* ViewController.swift */; };
 		BEF06A0A210740CA00106622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF06A08210740CA00106622 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		BE8DC085210798F200FD9A69 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		BE9C74F22108B97F009BDFBC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BEF06A01210740CA00106622 /* Gestgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF06A04210740CA00106622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF06A06210740CA00106622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,13 +66,14 @@
 			children = (
 				BEF06A04210740CA00106622 /* AppDelegate.swift */,
 				BEF06A06210740CA00106622 /* ViewController.swift */,
+				BEF06A1A21075AA700106622 /* PhotoViewController.swift */,
+				BE9C74F22108B97F009BDFBC /* DetailViewController.swift */,
 				BEF06A08210740CA00106622 /* Main.storyboard */,
 				BEF06A0B210740CB00106622 /* Assets.xcassets */,
 				BEF06A0D210740CB00106622 /* LaunchScreen.storyboard */,
 				BEF06A10210740CB00106622 /* Info.plist */,
 				BEF06A16210742F400106622 /* codes.swift */,
 				BEF06A182107512200106622 /* CustomCell.swift */,
-				BEF06A1A21075AA700106622 /* PhotoViewController.swift */,
 				BE8DC085210798F200FD9A69 /* ProfileCell.swift */,
 			);
 			path = Gestgram;
@@ -153,6 +156,7 @@
 				BE8DC086210798F200FD9A69 /* ProfileCell.swift in Sources */,
 				BEF06A17210742F400106622 /* codes.swift in Sources */,
 				BEF06A1B21075AA700106622 /* PhotoViewController.swift in Sources */,
+				BE9C74F32108B97F009BDFBC /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

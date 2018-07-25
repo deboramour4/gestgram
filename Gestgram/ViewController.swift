@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     //Variables
     var selectedImageIndex = 0
+    var selectedImageIndexForceTouch = 0
     var images = [
         UIImage(named: "img1.jpg")!,
         UIImage(named: "img2.jpg")!,
@@ -43,6 +44,14 @@ class ViewController: UIViewController {
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGesture(sender:)))
         collectionView.addGestureRecognizer(longPressGesture)
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: collectionView)
+        }
+        else {
+            // Create an alert to display to the user.
+            print("Não suporta!")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,6 +64,13 @@ class ViewController: UIViewController {
             vc.myImage = self.images[selectedImageIndex]
         }
         
+        if segue.identifier == "showDetail" {
+            
+            let detailViewController = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+            
+            // Pass the `title` to the `detailViewController`.
+            detailViewController.imageDetail.image = images[selectedImageIndexForceTouch]
+        }
     }
     
     @objc func longPressGesture(sender : UILongPressGestureRecognizer!) {
@@ -63,16 +79,29 @@ class ViewController: UIViewController {
             guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView)) else {
                 break
             }
+                UIView.animate(withDuration: 0.3, animations: {
+                    if let cell = self.collectionView.cellForItem(at: selectedIndexPath) as? CustomCell {
+                        cell.imageCell?.transform = (cell.contentView.transform.scaledBy(x: 0.9, y: 0.9))
+                    }
+                })
             collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
         case .changed:
-        collectionView.updateInteractiveMovementTargetPosition(sender.location(in: sender.view!))
+            collectionView.updateInteractiveMovementTargetPosition(sender.location(in: sender.view!))
         case .ended:
+            guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView)) else {
+                collectionView.endInteractiveMovement()
+                break
+            }
             collectionView.endInteractiveMovement()
+//            UIView.animate(withDuration: 0.3, animations: {
+//                if let cell = self.collectionView.cellForItem(at: selectedIndexPath) as? CustomCell {
+//                    cell.imageCell?.transform = CGAffineTransform.identity
+//                }
+//            })
         default:
             collectionView.cancelInteractiveMovement()
         }
     }
-
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -147,5 +176,38 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
         let itemWidth = ((view.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow).rounded(.down))
         
         return CGSize(width: itemWidth, height: itemWidth)
+    }
+}
+
+extension ViewController: UIViewControllerPreviewingDelegate {
+    /// Create a previewing view controller to be shown at "Peek".
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        // Obtain the index path and the cell that was pressed.
+        guard let indexPath = collectionView.indexPathForItem(at: location),
+            let cell = collectionView.cellForItem(at: indexPath) else { return nil }
+        
+        selectedImageIndexForceTouch = indexPath.row
+        
+        // Create a detail view controller and set its properties.
+        guard let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return nil }
+        
+        detailViewController.imageD = images[selectedImageIndexForceTouch]
+        
+        /*
+         Set the height of the preview by setting the preferred content size of the detail view controller.
+         Width should be zero, because it's not used in portrait.
+         */
+        detailViewController.preferredContentSize = CGSize(width: 0.0, height:0.0)
+        
+        // Set the source rect to the cell frame, so surrounding elements are blurred.
+        previewingContext.sourceRect = cell.frame
+        
+        return detailViewController
+    }
+    
+    /// Present the view controller for the "Pop" action.
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        // Reuse the "Peek" view controller for presentation.
+        //show(viewControllerToCommit, sender: self)
     }
 }
