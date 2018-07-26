@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		BE8DC086210798F200FD9A69 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DC085210798F200FD9A69 /* ProfileCell.swift */; };
 		BE9C74F32108B97F009BDFBC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C74F22108B97F009BDFBC /* DetailViewController.swift */; };
+		BE9C74F5210A0A4E009BDFBC /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C74F4210A0A4E009BDFBC /* FlowLayout.swift */; };
+		BE9C74F7210A0A94009BDFBC /* DelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C74F6210A0A94009BDFBC /* DelegateDataSource.swift */; };
+		BE9C74F9210A0B08009BDFBC /* PreviewPeekandPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C74F8210A0B08009BDFBC /* PreviewPeekandPop.swift */; };
 		BEF06A05210740CA00106622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF06A04210740CA00106622 /* AppDelegate.swift */; };
 		BEF06A07210740CA00106622 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF06A06210740CA00106622 /* ViewController.swift */; };
 		BEF06A0A210740CA00106622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF06A08210740CA00106622 /* Main.storyboard */; };
 		BEF06A0C210740CB00106622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF06A0B210740CB00106622 /* Assets.xcassets */; };
 		BEF06A0F210740CB00106622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF06A0D210740CB00106622 /* LaunchScreen.storyboard */; };
-		BEF06A17210742F400106622 /* codes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF06A16210742F400106622 /* codes.swift */; };
 		BEF06A192107512200106622 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF06A182107512200106622 /* CustomCell.swift */; };
 		BEF06A1B21075AA700106622 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF06A1A21075AA700106622 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +24,9 @@
 /* Begin PBXFileReference section */
 		BE8DC085210798F200FD9A69 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		BE9C74F22108B97F009BDFBC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BE9C74F4210A0A4E009BDFBC /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		BE9C74F6210A0A94009BDFBC /* DelegateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateDataSource.swift; sourceTree = "<group>"; };
+		BE9C74F8210A0B08009BDFBC /* PreviewPeekandPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPeekandPop.swift; sourceTree = "<group>"; };
 		BEF06A01210740CA00106622 /* Gestgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF06A04210740CA00106622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF06A06210740CA00106622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +34,6 @@
 		BEF06A0B210740CB00106622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEF06A0E210740CB00106622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEF06A10210740CB00106622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEF06A16210742F400106622 /* codes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codes.swift; sourceTree = "<group>"; };
 		BEF06A182107512200106622 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BEF06A1A21075AA700106622 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +49,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE9C74FA210A0B20009BDFBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE9C74F4210A0A4E009BDFBC /* FlowLayout.swift */,
+				BE9C74F6210A0A94009BDFBC /* DelegateDataSource.swift */,
+				BE9C74F8210A0B08009BDFBC /* PreviewPeekandPop.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE9C74FB210A0B39009BDFBC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEF06A06210740CA00106622 /* ViewController.swift */,
+				BEF06A1A21075AA700106622 /* PhotoViewController.swift */,
+				BE9C74F22108B97F009BDFBC /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE9C74FC210A0B45009BDFBC /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				BEF06A182107512200106622 /* CustomCell.swift */,
+				BE8DC085210798F200FD9A69 /* ProfileCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		BEF069F8210740CA00106622 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +97,14 @@
 		BEF06A03210740CA00106622 /* Gestgram */ = {
 			isa = PBXGroup;
 			children = (
+				BE9C74FB210A0B39009BDFBC /* Controllers */,
+				BE9C74FA210A0B20009BDFBC /* Extensions */,
+				BE9C74FC210A0B45009BDFBC /* CustomCells */,
 				BEF06A04210740CA00106622 /* AppDelegate.swift */,
-				BEF06A06210740CA00106622 /* ViewController.swift */,
-				BEF06A1A21075AA700106622 /* PhotoViewController.swift */,
-				BE9C74F22108B97F009BDFBC /* DetailViewController.swift */,
 				BEF06A08210740CA00106622 /* Main.storyboard */,
 				BEF06A0B210740CB00106622 /* Assets.xcassets */,
 				BEF06A0D210740CB00106622 /* LaunchScreen.storyboard */,
 				BEF06A10210740CB00106622 /* Info.plist */,
-				BEF06A16210742F400106622 /* codes.swift */,
-				BEF06A182107512200106622 /* CustomCell.swift */,
-				BE8DC085210798F200FD9A69 /* ProfileCell.swift */,
 			);
 			path = Gestgram;
 			sourceTree = "<group>";
@@ -151,12 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEF06A07210740CA00106622 /* ViewController.swift in Sources */,
+				BE9C74F5210A0A4E009BDFBC /* FlowLayout.swift in Sources */,
+				BE9C74F7210A0A94009BDFBC /* DelegateDataSource.swift in Sources */,
 				BEF06A05210740CA00106622 /* AppDelegate.swift in Sources */,
 				BEF06A192107512200106622 /* CustomCell.swift in Sources */,
 				BE8DC086210798F200FD9A69 /* ProfileCell.swift in Sources */,
-				BEF06A17210742F400106622 /* codes.swift in Sources */,
 				BEF06A1B21075AA700106622 /* PhotoViewController.swift in Sources */,
 				BE9C74F32108B97F009BDFBC /* DetailViewController.swift in Sources */,
+				BE9C74F9210A0B08009BDFBC /* PreviewPeekandPop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,13 +333,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U9XP2P92X2;
+				DEVELOPMENT_TEAM = S7LBWA3M99;
 				INFOPLIST_FILE = Gestgram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.Gestgram;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.Gestgram1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,13 +352,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U9XP2P92X2;
+				DEVELOPMENT_TEAM = S7LBWA3M99;
 				INFOPLIST_FILE = Gestgram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.Gestgram;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.Gestgram1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

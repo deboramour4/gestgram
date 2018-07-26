@@ -59,9 +59,19 @@
                                                             </constraints>
                                                             <items>
                                                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="9nX-4f-mh3"/>
-                                                                <barButtonItem title="Grid" id="0Cz-2o-jbv"/>
+                                                                <barButtonItem image="grid" id="0Cz-2o-jbv">
+                                                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <connections>
+                                                                        <action selector="gridAction:" destination="BYZ-38-t0r" id="rfU-ju-1mc"/>
+                                                                    </connections>
+                                                                </barButtonItem>
                                                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="wYi-T4-yon"/>
-                                                                <barButtonItem systemItem="bookmarks" id="i5j-7I-sXe"/>
+                                                                <barButtonItem title="Item" image="list" id="i5j-7I-sXe">
+                                                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.50219392123287676" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <connections>
+                                                                        <action selector="listAction:" destination="BYZ-38-t0r" id="sV6-tX-jrn"/>
+                                                                    </connections>
+                                                                </barButtonItem>
                                                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="7El-QY-kvN"/>
                                                             </items>
                                                         </toolbar>
@@ -144,7 +154,7 @@
         <!--Photo View Controller-->
         <scene sceneID="V1k-MF-fHM">
             <objects>
-                <viewController id="cce-zq-EEv" customClass="PhotoViewController" customModule="Gestgram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" id="cce-zq-EEv" customClass="PhotoViewController" customModule="Gestgram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zRP-6k-xlE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +163,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T62-dd-sI8">
-                                        <rect key="frame" x="15" y="110" width="345" height="463"/>
+                                        <rect key="frame" x="15" y="110" width="345" height="343"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_outline" translatesAutoresizingMaskIntoConstraints="NO" id="azo-9w-n8q">
                                         <rect key="frame" x="162.5" y="30" width="50" height="50"/>
@@ -168,12 +178,13 @@
                                     <constraint firstItem="T62-dd-sI8" firstAttribute="top" secondItem="azo-9w-n8q" secondAttribute="bottom" constant="30" id="Djn-Mx-guL"/>
                                     <constraint firstItem="azo-9w-n8q" firstAttribute="centerX" secondItem="T62-dd-sI8" secondAttribute="centerX" id="IO5-ue-BG6"/>
                                     <constraint firstAttribute="trailing" secondItem="T62-dd-sI8" secondAttribute="trailing" constant="15" id="Rug-kO-m5k"/>
-                                    <constraint firstAttribute="bottom" secondItem="T62-dd-sI8" secondAttribute="bottom" constant="30" id="Vuj-Pq-4Sn"/>
+                                    <constraint firstAttribute="bottom" secondItem="T62-dd-sI8" secondAttribute="bottom" constant="150" id="Vuj-Pq-4Sn"/>
                                     <constraint firstItem="T62-dd-sI8" firstAttribute="leading" secondItem="Pul-d2-Yh1" secondAttribute="leading" constant="15" id="cYs-fF-8lJ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pul-d2-Yh1" firstAttribute="top" secondItem="geb-aE-tlz" secondAttribute="top" id="TMt-7H-Rak"/>
                             <constraint firstItem="Pul-d2-Yh1" firstAttribute="leading" secondItem="geb-aE-tlz" secondAttribute="leading" id="b9Z-IT-MBh"/>
@@ -241,6 +252,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="grid" width="25" height="25"/>
         <image name="heart_outline" width="50" height="44"/>
+        <image name="list" width="25" height="21"/>
     </resources>
 </document>
